@@ -1,0 +1,9 @@
+---
+# vars file for aws_ec2
+key: 'mykey111'
+sg_id: 'sg-041482d29f68b5ade'
+type: 't2.micro'
+ami: 'ami-0ebc1ac48dfd14136'
+region_name: 'ap-south-1'
+tag_name: 'Ansplay'
+subnet: 'subnet-d9f5cfb1'

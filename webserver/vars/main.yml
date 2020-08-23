@@ -1,0 +1,5 @@
+---
+# vars file for webserver 
+direc_path: "/var/www/juzer"
+serverport: 8123
+

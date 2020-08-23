@@ -1,0 +1,26 @@
+---
+# tasks file for webserver
+- name: Install httpd
+  package:
+    name: "httpd"
+    state: present
+
+- name: Create new directory for httpd
+  file:
+    state: directory
+    dest: "{{ direc_path }}"
+  register: dc_status
+- name: Copy conf file
+  template:
+    src: "local_conf.conf.j2"
+    dest: "/etc/httpd/conf.d/web.conf"
+  when: dc_status.failed == false
+  notify: service httpd
+- name: Download webpage
+  get_url:
+    url: "https://raw.githubusercontent.com/juzer-patan/ansible_task/master/juzer.html"
+    dest: "{{ direc_path }}"
+- name: Start httpd
+  service:
+    name: "httpd"
+    state: started

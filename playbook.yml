@@ -1,0 +1,8 @@
+- hosts: localhost
+  gather_facts: false
+  roles: 
+  - aws_ec2 
+- hosts: tag_name_Ansplay 
+  roles: 
+  - webserver   
+

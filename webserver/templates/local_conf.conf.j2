@@ -1,0 +1,6 @@
+Listen {{ serverport }}
+
+<Virtualhost {{ ansible_default_ipv4.address }}:{{ serverport }}>
+DocumentRoot {{ direc_path }}
+</Virtualhost>
+
